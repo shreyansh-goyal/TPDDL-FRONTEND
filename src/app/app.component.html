@@ -1,20 +1,128 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<mat-toolbar color="primary" style="height:80px;display:flex;justify-content: space-between" class="navbar" >
+  <img style="height:70px;" src="data:image/png;base64,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" alt="">
+  <span>Tata Power Delhi Distribution Limited</span>
+</mat-toolbar>
+<div *ngIf="!displayTable;else table">
+<h2 style="text-align:center;color:#3f51b5;">Welcome To The Report Generator</h2>
+<div style="width:70%;margin:auto;margin-top:2%;border:2px solid #f44336;border-radius:7px;padding:20px; ">
+  <form (ngSubmit)="onSubmit(f)" enctype="multipart/form-data" method="post" #f="ngForm">
+  <div style="display:flex;align-items:center;justify-content:center;margin-bottom:30px;"> 
+    Click Here to process the records
+  </div>
+  <button  (click)="switchMode()" mat-button style="margin:auto;display:block;color:white;background-color:#3f51b5;" type="submit">Upload the file</button>
+</form>
+</div> 
+<button color="primary"  (click)="downloadPhoneReport()" style="margin-top:100px;margin-left:6%;border:0.5px solid #c2185b"  mat-button>Download the PhoneNumber Data</button>
+<button color="primary"  (click)="downloadUserReport()" style="margin-top:100px;margin-left:2%;border:0.5px solid #c2185b"  mat-button>Download the Delivered To Data</button>
+<button color="primary"  (click)="downloadRelationReport()" style="margin-top:100px;margin-left:2%;border:0.5px solid #c2185b"  mat-button>Download the Relation Data</button>
+<button color="primary"  (click)="downloadDeliveryBoyReport()" style="margin-top:100px;margin-left:2%;border:0.5px solid #c2185b"  mat-button>Download the Delivered By Data</button>
+<button color="primary" mat-raised-button  *ngIf="downloadButton" style="margin-left:43%;margin-top:40px;" (click)="getData()" >View In Table Format</button>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<ng-template #table>
+  <mat-accordion style="min-height:100%;">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header >
+        <mat-panel-title>
+         Phone Records of Customers
+        </mat-panel-title>
+        <mat-panel-description>
+        Click on Panel to see Results
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div>
+        <mat-form-field style="width:100%;">
+          <input matInput (change)="reactOnChange($event,'phone')" placeholder="Input">
+        </mat-form-field>
+      </div>
+      <table matSort (matSortChange)="sortData($event)" style="width:100%">
+        <tr>
+            <th>CA_Number</th>
 
+          <th *ngFor="let data of phoneKeys">{{data}}</th>
+        </tr>
+        <tr *ngFor="let data of userArray">
+            <td>{{data.CA_Number}}</td>
+          <td style="text-align: center;" *ngFor="let data1 of phoneKeys">{{data.data[data1]}}</td>
+        </tr>
+      </table>      
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header >
+        <mat-panel-title>
+         Delivered By Records of Customers
+        </mat-panel-title>
+        <mat-panel-description>
+        Click on Panel to see Results
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div>
+        <mat-form-field style="width:100%;">
+          <input matInput (change)="reactOnChange($event,'delivery')" placeholder="Input">
+        </mat-form-field>
+      </div>
+      <table matSort (matSortChange)="sortData($event)" style="width:100%">
+        <tr>
+            <th>CA_Number</th>
+          <th *ngFor="let data of deliveryBoyKeys">{{data}}</th>
+        </tr>
+        <tr *ngFor="let data of userArray">
+            <td>{{data.CA_Number}}</td>
+          <td style="text-align: center;" *ngFor="let data1 of deliveryBoyKeys">{{data.data[data1]}}</td>
+        </tr>
+      </table>      
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false" >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          User Data of Customers
+        </mat-panel-title>
+        <mat-panel-description>
+          Click on the Panel to see Results        
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div>
+        <mat-form-field style="width:100%;">
+          <input matInput (change)="reactOnChange($event,'user')" placeholder="Input">
+        </mat-form-field>
+      </div>
+      <table matSort (matSortChange)="sortData($event)" style="width:100%">
+        <tr>
+            <th>CA_Number</th>
+          <th *ngFor="let data of userKeys">{{data}}</th>
+        </tr>
+        <tr  *ngFor="let data of userArray">
+          <td>{{data.CA_Number}}</td>
+          <td style="text-align: center;" *ngFor="let data1 of userKeys">{{data.data[data1]}}</td>
+        </tr>
+      </table>
+    </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          User Data of Relations to User
+        </mat-panel-title>
+        <mat-panel-description>
+          &nbsp;&nbsp;&nbsp;&nbsp;Click on the Panel to see Results
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div>
+        <mat-form-field style="width:100%;">
+          <input matInput (change)="reactOnChange($event,'job')" placeholder="Input">
+        </mat-form-field>
+      </div>
+      <table matSort (matSortChange)="sortData($event)" style="width:100%">
+        <tr>
+          <th>CA_Number</th>
+          <th *ngFor="let data of jobKeys">{{data}}</th>
+        </tr>
+        <tr *ngFor="let data of userArray">
+            <td>{{data.CA_Number}}</td>
+          <td style="text-align: center;" *ngFor="let data1 of jobKeys">{{data.data[data1]}}</td>
+        </tr>
+      </table>
+    </mat-expansion-panel>
+  </mat-accordion>    
+  <button color="primary"  (click)="back()" style="margin-top:100px;margin-left:2%;border:0.5px solid #c2185b"  mat-button>Back</button>
+</ng-template>
